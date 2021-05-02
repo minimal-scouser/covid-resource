@@ -1,11 +1,15 @@
-import React from 'react'
+import React from "react";
+import { Switch, Route, Redirect } from "react-router-dom";
+import AvailabilityForm from "../availability/AvailabilityForm";
 
 const Layout = () => {
-    return (
-        <div>
-            hello world
-        </div>
-    )
-}
+  return (
+    <>
+      <Switch>
+        <Route path="/" render={(props) => <AvailabilityForm {...props} />} />
+      </Switch>
+    </>
+  );
+};
 
-export default Layout
+export default Layout;
