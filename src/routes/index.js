@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from "react";
 import { Switch, Route, HashRouter } from "react-router-dom";
 import Layout from "./Layout";
-import Header from "../common/Header";
+import Header from "../components/common/Header";
 
 const Routes = () => {
   return (
