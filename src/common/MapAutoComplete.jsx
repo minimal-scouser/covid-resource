@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import GooglePlacesAutocomplete from "react-google-places-autocomplete";
 
-const API_KEY = process.env.GMAPS_KEY;
+const API_KEY = process.env.REACT_APP_GMAPS_KEY;
 
 export default class MapAutoComplete extends Component {
   constructor(props) {
