@@ -1,7 +1,8 @@
 import React from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 import AvailabilityForm from "../components/availability/AvailabilityForm";
-import Home from "../components/home/Home"
+import Home from "../components/home/Home";
+
 
 const Layout = () => {
   return (
