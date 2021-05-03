@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./style.css";
 import Creatable, { makeCreatableSelect } from "react-select/creatable";
 import MapAutoComplete from "../common/MapAutoComplete";
+import "react-phone-number-input/style.css";
+import PhoneInput from "react-phone-number-input";
 
 const AvailabilityForm = () => {
   const options = [
@@ -10,25 +12,49 @@ const AvailabilityForm = () => {
     { value: "vanilla", label: "Vanilla" },
   ];
 
+  const [value, setValue] = useState();
+
+  const dropdownStyles = {
+    control: (styles) => ({
+      ...styles,
+      width: "100%",
+      // height: "42px",
+      // borderRadius: "4px",
+      // fontSize: "12px",
+    }),
+    // option: (style) => ({
+    //   ...style,
+    //   heigth: "1rem !important",
+    // }),
+  };
+
   return (
     <>
-      <form className="form-inline" action="/action_page.php">
-        <MapAutoComplete />
+      <div className="form">
+        <MapAutoComplete styles={dropdownStyles}/>
         <br />
-        <Creatable options={options} placeholder="Select type" />
-        <br />
-        <Creatable options={options} placeholder="Select sub-type" />
-        <input
-          type="email"
-          id="email"
-          placeholder="Enter Contact Info"
-          name="email"
+        <Creatable
+          options={options}
+          placeholder="Select type"
+          styles={dropdownStyles}
         />
-        <label>
-          <input type="checkbox" name="remember" /> Verified by me
-        </label>
+        <br />
+        <Creatable
+          options={options}
+          placeholder="Select sub-type"
+          styles={dropdownStyles}
+        />
+        <br />
+        <PhoneInput
+          placeholder="Enter phone number"
+          value={value}
+          // country="IND"
+          onChange={setValue}
+          styles={dropdownStyles}
+        />
+        <br />
         <button type="submit">Submit</button>
-      </form>
+      </div>
     </>
   );
 };

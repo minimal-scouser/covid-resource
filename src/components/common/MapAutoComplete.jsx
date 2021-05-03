@@ -3,6 +3,8 @@ import GooglePlacesAutocomplete from "react-google-places-autocomplete";
 
 const API_KEY = process.env.REACT_APP_GMAPS_KEY;
 
+
+
 export default class MapAutoComplete extends Component {
   constructor(props) {
     super(props);
@@ -28,6 +30,6 @@ export default class MapAutoComplete extends Component {
   }
 
   render() {
-    return <GooglePlacesAutocomplete apiKey={API_KEY} />;
+    return <GooglePlacesAutocomplete apiKey={API_KEY} placeholder={"select area 1"}/>;
   }
 }
