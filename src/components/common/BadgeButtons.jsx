@@ -1,18 +1,20 @@
 import React from "react";
 import { Button, Text } from "./RowColStyle";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {faLungs, faProcedures, faUtensils, faUserMd, faPills} from "@fortawesome/free-solid-svg-icons";
 
 const BadgeButtons = () => {
   return (
     <>
-      <Button>Oxygen</Button>
+      <Button><FontAwesomeIcon icon={faLungs} /> &nbsp;Oxygen</Button>
       &nbsp; &nbsp;
-      <Button>Beds</Button>
+      <Button><FontAwesomeIcon icon={faProcedures} /> &nbsp;Beds</Button>
       &nbsp; &nbsp;
-      <Button>Food</Button>
+      <Button><FontAwesomeIcon icon={faUtensils} /> &nbsp;Food</Button>
       &nbsp; &nbsp;
-      <Button>Food</Button>
+      <Button><FontAwesomeIcon icon={faPills} /> &nbsp;Medicine</Button>
       &nbsp; &nbsp;
-      <Button>Doctor</Button>
+      <Button><FontAwesomeIcon icon={faUserMd} /> &nbsp;Doctor</Button>
       &nbsp; &nbsp;
       {/* <Button>Button 2</Button> */}
     </>
