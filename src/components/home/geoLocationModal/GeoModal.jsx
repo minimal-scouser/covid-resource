@@ -4,6 +4,7 @@ import Modal from "react-modal";
 import MapAutoComplete from "../../common/MapAutoComplete";
 import Geocode from "react-geocode";
 import { Button, Row, Col, Text } from "../../common/RowColStyle";
+import "./style.css"
 
 const customStyles = {
   content: {
@@ -11,7 +12,8 @@ const customStyles = {
     left: "50%",
     right: "auto",
     bottom: "auto",
-    marginRight: "-50%",
+    marginRight: "-28%",
+    marginLeft: "2%",
     transform: "translate(-50%, -50%)",
   },
 };
@@ -88,28 +90,29 @@ const GeoModal = (props) => {
           <>
             <Row>
               <Text>Your current location is</Text>
+              <br />
             </Row>
             <Row>
               <Text>{state.placeName}</Text>
             </Row>
-            <br />
           </>
         ) : (
           <Row>
-            <Text>Fetching Current Location</Text>
+            <Text>Fetching Current Location...</Text>
           </Row>
         )}
         <>
-          <Row>
+          {/* <Row>
             <Text>or</Text>
-          </Row>
+          </Row> */}
+          <div class="fade_rule"></div>  
           <Row>
             <Text sub={true}>Search your location manually</Text>
           </Row>
         </>
 
         <MapAutoComplete />
-
+          <br/>
         <Row>
           <Button
             disabled={!state.fetchedUserLocation}

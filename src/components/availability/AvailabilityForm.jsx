@@ -4,6 +4,7 @@ import Creatable, { makeCreatableSelect } from "react-select/creatable";
 import MapAutoComplete from "../common/MapAutoComplete";
 import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
+import {Text, Row, Col} from "../common/RowColStyle"
 
 const AvailabilityForm = () => {
   const options = [
@@ -31,6 +32,7 @@ const AvailabilityForm = () => {
   return (
     <>
       <div className="form">
+        <Row><Text>Add your Resource</Text></Row>
         <MapAutoComplete styles={dropdownStyles}/>
         <br />
         <Creatable
