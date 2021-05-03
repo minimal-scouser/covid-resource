@@ -4,11 +4,15 @@ import { Button, Text } from "./RowColStyle";
 const BadgeButtons = () => {
   return (
     <>
-      <Button>Button 1</Button>
+      <Button>Oxygen</Button>
       &nbsp; &nbsp;
-      <Button>Button 2</Button>
+      <Button>Beds</Button>
       &nbsp; &nbsp;
-      <Button>Button 2</Button>
+      <Button>Food</Button>
+      &nbsp; &nbsp;
+      <Button>Food</Button>
+      &nbsp; &nbsp;
+      <Button>Doctor</Button>
       &nbsp; &nbsp;
       {/* <Button>Button 2</Button> */}
     </>
