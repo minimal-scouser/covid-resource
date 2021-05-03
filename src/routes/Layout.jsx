@@ -10,7 +10,7 @@ const Layout = () => {
         <Route path="/add-availability" render={(props) => <AvailabilityForm {...props} />} />
       </Switch>
       <Switch>
-        <Route path="/" render={(props) => <Home {...props} />} />
+        <Route exact path="/" render={(props) => <Home {...props} />} />
       </Switch>
     </>
   );
