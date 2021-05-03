@@ -1,8 +1,8 @@
 import React from "react";
 import "./style.css";
-import { Row, Col, Text } from "../../common/RowColStyle";
+import { Row, Col, Text, Button } from "../../common/RowColStyle";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {faDirections, faPhoneSquareAlt} from "@fortawesome/free-solid-svg-icons";
+import {faDirections, faPhoneSquareAlt, faCheckCircle} from "@fortawesome/free-solid-svg-icons";
 
 const Card = () => {
   return (
@@ -13,7 +13,7 @@ const Card = () => {
             <Row>
               <Text bold={true}>Oxygen Dhaba</Text>
             </Row>
-            <h3>Card 1</h3>
+            <Button disabled color={"green"}><FontAwesomeIcon icon={faCheckCircle} /> &nbsp;Available</Button>
             <Row>
               <Col border={true}>
                 <Text><FontAwesomeIcon icon={faPhoneSquareAlt} /> &nbsp;Call</Text>

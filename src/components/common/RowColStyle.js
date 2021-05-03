@@ -49,6 +49,11 @@ const Button = styled.button`
     border-radius:20px ;
     color: white;
     height: 10px;
+
+    &:hover {
+      background-color:${(props) => props.color || "dodgerblue"};
+    /* color: white; */
+  }
  
 `;
 
