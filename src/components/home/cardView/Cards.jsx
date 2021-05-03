@@ -6,6 +6,7 @@ const Cards = () => {
     <>
       <Card />
       <Card />
+      <Card />
     </>
   );
 };
