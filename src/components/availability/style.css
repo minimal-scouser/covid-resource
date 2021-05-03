@@ -26,6 +26,7 @@
     padding: 10px 20px;
     background-color: dodgerblue;
     border: 1px solid #ddd;
+    border-radius:4px;
     color: white;
     min-height: 42px;
   }

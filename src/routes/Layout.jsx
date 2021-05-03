@@ -6,7 +6,7 @@ const Layout = () => {
   return (
     <>
       <Switch>
-        <Route path="/" render={(props) => <AvailabilityForm {...props} />} />
+        <Route path="/add-availability" render={(props) => <AvailabilityForm {...props} />} />
       </Switch>
     </>
   );
