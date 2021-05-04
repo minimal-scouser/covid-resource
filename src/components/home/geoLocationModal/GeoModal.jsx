@@ -107,7 +107,7 @@ const GeoModal = (props) => {
           </Row> */}
           <div class="fade_rule"></div>  
           <Row>
-            <Text sub={true}>Search your location manually</Text>
+            <Text sub1={true}>Or Search your location manually</Text>
           </Row>
         </>
 

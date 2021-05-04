@@ -25,12 +25,15 @@ const Col = styled.div`
     background-color:  ${(props) => (props.border ? "rgba(33,33,33,.2)" : null)};
     /* color: white; */
   }
+  @media (max-width: 710px) {
+    width: ${(props) => props.width=="50%"?"100%" : "40%"};
+  }
 `;
 
 const Text = styled.p`
-  font-size: ${(props) => (props.sub ? "10px" : "20px")};
+  font-size: ${(props) => (props.sub ? "10px" : props.sub1? "20px": "24px")};
   font-weight: ${(props) =>
-    props.bold ? "bold" : props.sub ? "light" : "none"};
+    props.bold ? "bold" : props.sub || props.sub1 ? "light" : "none"};
   float: left;
   display: block;
   ${(props) =>

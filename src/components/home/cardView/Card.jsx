@@ -16,11 +16,11 @@ const Card = () => {
             <Button disabled color={"green"}><FontAwesomeIcon icon={faCheckCircle} /> &nbsp;Available</Button>
             <Row>
               <Col border={true}>
-                <Text><FontAwesomeIcon icon={faPhoneSquareAlt} /> &nbsp;Call</Text>
+                <Text sub1={true}><FontAwesomeIcon icon={faPhoneSquareAlt} /> &nbsp;Call</Text>
               </Col>
               &nbsp;&nbsp;&nbsp;
               <Col border={true}>
-                <Text ><FontAwesomeIcon icon={faDirections} /> &nbsp;Direction</Text>
+                <Text sub1={true}><FontAwesomeIcon icon={faDirections} /> &nbsp;Direction</Text>
               </Col>
             </Row>
           </div>
