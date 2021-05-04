@@ -6,7 +6,10 @@ import Geocode from "react-geocode";
 import { Button, Row, Col, Text } from "../../common/RowColStyle";
 import "./style.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {faMapMarkerAlt, faLocationArrow} from "@fortawesome/free-solid-svg-icons";
+import {
+  faMapMarkerAlt,
+  faLocationArrow,
+} from "@fortawesome/free-solid-svg-icons";
 
 const customStyles = {
   content: {
@@ -95,26 +98,32 @@ const GeoModal = (props) => {
               <br />
             </Row>
             <Row mTop={"-37px"}>
-              <Text><FontAwesomeIcon icon={faMapMarkerAlt} /> &nbsp;{state.placeName}</Text>
+              <Text>
+                <FontAwesomeIcon icon={faMapMarkerAlt} /> &nbsp;
+                {state.placeName}
+              </Text>
             </Row>
           </>
         ) : (
           <Row>
-            <Text sub1={true}><FontAwesomeIcon icon={faLocationArrow} /> &nbsp;Fetching Current Location...</Text>
+            <Text sub1={true}>
+              <FontAwesomeIcon icon={faLocationArrow} /> &nbsp;Fetching Current
+              Location...
+            </Text>
           </Row>
         )}
         <>
           {/* <Row>
             <Text>or</Text>
           </Row> */}
-          <div class="fade_rule"></div>  
+          <div class="fade_rule"></div>
           <Row>
             <Text sub1={true}>Or Search your location manually</Text>
           </Row>
         </>
 
         <MapAutoComplete />
-          <br/>
+        <br />
         <Row>
           <Button
             disabled={!state.fetchedUserLocation}
