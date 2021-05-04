@@ -1,35 +1,46 @@
-import React, { Component } from "react";
-import GooglePlacesAutocomplete from "react-google-places-autocomplete";
+import React, { useState, useEffect } from "react";
+import GooglePlacesAutocomplete, {
+  geocodeByPlaceId,
+  geocodeByAddress,
+  getLatLng,
+} from "react-google-places-autocomplete";
 
 const API_KEY = process.env.REACT_APP_GMAPS_KEY;
 
+const Map1 = () => {
+  const [value, setValue] = useState(null);
+  const [state, setState] = useState({
+    lat: "",
+    lng: "",
+  });
 
-
-export default class MapAutoComplete extends Component {
-  constructor(props) {
-    super(props);
-
-    this.autocomplete = null;
-
-    this.onLoad = this.onLoad.bind(this);
-    this.onPlaceChanged = this.onPlaceChanged.bind(this);
-  }
-
-  onLoad(autocomplete) {
-    console.log("autocomplete: ", autocomplete);
-
-    this.autocomplete = autocomplete;
-  }
-
-  onPlaceChanged() {
-    if (this.autocomplete !== null) {
-      console.log(this.autocomplete.getPlace());
-    } else {
-      console.log("Autocomplete is not loaded yet!");
+  useEffect(() => {
+    if (value) {
+      geocodeByAddress(value.value.description)
+        .then((results) => getLatLng(results[0]))
+        .then(({ lat, lng }) => {
+          console.log("Successfully got latitude and longitude", { lat, lng });
+          setState((prevState) => ({
+            ...prevState,
+            lat: lat.toString(),
+            lng: lng.toString(),
+          }));
+        });
     }
-  }
+  }, [value]);
 
-  render() {
-    return <GooglePlacesAutocomplete apiKey={API_KEY} placeholder={"select area 1"}/>;
-  }
-}
+  return (
+    <>
+      {console.log("state", state)}
+      <GooglePlacesAutocomplete
+        apiKey={API_KEY}
+        selectProps={{
+          value,
+          onChange: setValue,
+        }}
+      />
+    </>
+  );
+};
+
+export default Map1;

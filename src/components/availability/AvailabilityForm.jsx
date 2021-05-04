@@ -8,12 +8,20 @@ import {Text, Row, Col} from "../common/RowColStyle"
 
 const AvailabilityForm = () => {
   const options = [
-    { value: "chocolate", label: "Chocolate" },
-    { value: "strawberry", label: "Strawberry" },
-    { value: "vanilla", label: "Vanilla" },
+    { value: "1", label: "Chocolate" },
+    { value: "2", label: "Strawberry" },
+    { value: "3", label: "Vanilla" },
   ];
 
   const [value, setValue] = useState();
+
+  const [state, setState] = useState({
+    lat: "",
+    lng: "",
+    type: "",
+    resource_type_id: "",
+    resource_subType_id: "",
+  })
 
   const dropdownStyles = {
     control: (styles) => ({

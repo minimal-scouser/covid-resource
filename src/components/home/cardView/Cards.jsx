@@ -16,6 +16,18 @@ const Cards = () => {
       <Col  width="50%">
         <Card />
       </Col>
+      <Col  width="50%">
+        <Card />
+      </Col>
+      <Col  width="50%">
+        <Card />
+      </Col>
+      <Col  width="50%">
+        <Card />
+      </Col>
+      <Col  width="50%">
+        <Card />
+      </Col>
     </Row>
   );
 };
