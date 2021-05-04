@@ -6,7 +6,7 @@ const Row = styled.div`
   justify-content: ${(props) => props.justifyContent || "flex-start"};
   flex-flow: ${(props) => props.flexFlow || null};
   width: 100%;
-  margin-top: 6px;
+  margin-top: ${(props) => props.mTop? props.mTop : "6px"};
 `;
 
 const Col = styled.div`

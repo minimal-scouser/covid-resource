@@ -4,7 +4,9 @@ import Modal from "react-modal";
 import MapAutoComplete from "../../common/MapAutoComplete";
 import Geocode from "react-geocode";
 import { Button, Row, Col, Text } from "../../common/RowColStyle";
-import "./style.css"
+import "./style.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {faMapMarkerAlt, faLocationArrow} from "@fortawesome/free-solid-svg-icons";
 
 const customStyles = {
   content: {
@@ -89,16 +91,16 @@ const GeoModal = (props) => {
         {state.placeName.length > 0 ? (
           <>
             <Row>
-              <Text>Your current location is</Text>
+              <Text sub1={true}>Your current location is</Text>
               <br />
             </Row>
-            <Row>
-              <Text>{state.placeName}</Text>
+            <Row mTop={"-37px"}>
+              <Text><FontAwesomeIcon icon={faMapMarkerAlt} /> &nbsp;{state.placeName}</Text>
             </Row>
           </>
         ) : (
           <Row>
-            <Text>Fetching Current Location...</Text>
+            <Text sub1={true}><FontAwesomeIcon icon={faLocationArrow} /> &nbsp;Fetching Current Location...</Text>
           </Row>
         )}
         <>
