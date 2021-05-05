@@ -151,6 +151,7 @@ const AvailabilityForm = () => {
 
     setState(stateObj);
     setValue(valueObj);
+    setDisabled(true)
 
     notify();
   };
