@@ -20,18 +20,22 @@ const Card = () => {
             <Button disabled color={"green"}>
               <FontAwesomeIcon icon={faCheckCircle} /> &nbsp;Available
             </Button>
-            <br/>
-            <br/>
+            <br />
+            <br />
             <Row>
               <Col border={true} width={"20%"}>
                 <Text sub1={true}>
-                <FontAwesomeIcon icon={faPhoneAlt} /> &nbsp; Call
+                  <FontAwesomeIcon icon={faPhoneAlt} /> &nbsp;{" "}
+                  <a href="tel:+62896706255135">Call</a>
                 </Text>
               </Col>
               &nbsp;&nbsp;&nbsp;
               <Col border={true} width={"20%"}>
                 <Text sub1={true}>
-                <FontAwesomeIcon icon={faDirections} /> &nbsp; Go
+                  <FontAwesomeIcon icon={faDirections} /> &nbsp;
+                  <a href="http://www.google.com/maps/place/49.46800006494457,17.11514008755796/@49.46800006494457,17.11514008755796,17z">
+                    Go
+                  </a>
                 </Text>
               </Col>
             </Row>

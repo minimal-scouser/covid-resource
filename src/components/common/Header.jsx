@@ -1,6 +1,11 @@
 import React from "react";
 import "./style.css";
 import { NavLink, withRouter } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faShieldVirus,
+  faPlusCircle
+} from "@fortawesome/free-solid-svg-icons";
 
 const Header = () => {
   const onNavClick = () => {
@@ -15,10 +20,10 @@ const Header = () => {
     <>
       <div className="topnav" id="myTopnav">
         <NavLink to="/" activeClassName={"selected"}>
-          Home
+        <FontAwesomeIcon icon={faShieldVirus} /> &nbsp; Home
         </NavLink>
         <NavLink to="/add-availability" activeClassName={"selected"}>
-          Add Resource
+        <FontAwesomeIcon icon={faPlusCircle} /> &nbsp;Add Resource
         </NavLink>
         {/* <a href="#contact">Contact</a>
         <a href="#about">About</a> */}

@@ -8,6 +8,7 @@
     border: 1px solid #ccc;
     padding: 5%;
     transition: box-shadow .3s;
+    background-color:white;
   }
 
   .form:hover {
@@ -18,6 +19,15 @@
   input{
     width: 100%;
     height: 40px;
+    /* border: 4px; */
+  }
+
+  .contact-name{
+    width: 99%;
+    height: 45px;
+    border: 1px solid #ddd;
+    border-radius:4px;
+    padding-left: 10px;
   }
   
   
@@ -29,12 +39,14 @@
     border-radius:4px;
     color: white;
     min-height: 42px;
+    margin-top: 4%;
+    cursor: pointer;
   }
   
-  button:hover {
+  /* button:hover {
     background-color: royalblue;
   }
-  
+   */
   /* Add responsiveness - display the form controls vertically instead of horizontally on screens that are less than 800px wide */
   @media (max-width: 800px) {
     input {
