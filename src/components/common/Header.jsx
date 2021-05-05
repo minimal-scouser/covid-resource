@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import "./style.css";
 import { NavLink, withRouter } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -16,6 +16,10 @@ const Header = () => {
       x.className = "topnav";
     }
   };
+
+  useEffect(() => {
+    onNavClick()
+  },[])
   return (
     <>
       <div className="topnav" id="myTopnav">
