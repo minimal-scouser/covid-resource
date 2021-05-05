@@ -7,7 +7,7 @@ import GooglePlacesAutocomplete, {
 
 const API_KEY = process.env.REACT_APP_GMAPS_KEY;
 
-const Map1 = () => {
+const MapAutoComplete = (props) => {
   const [value, setValue] = useState(null);
   const [state, setState] = useState({
     lat: "",
@@ -19,7 +19,6 @@ const Map1 = () => {
       geocodeByAddress(value.value.description)
         .then((results) => getLatLng(results[0]))
         .then(({ lat, lng }) => {
-          console.log("Successfully got latitude and longitude", { lat, lng });
           setState((prevState) => ({
             ...prevState,
             lat: lat.toString(),
@@ -28,6 +27,12 @@ const Map1 = () => {
         });
     }
   }, [value]);
+
+  useEffect(() =>{
+    if(state.lat.length>0 || state.lng.length>0){
+      props.getCoordinates(state.lat, state.lng)
+    }
+  },[state])
 
   return (
     <>
@@ -43,4 +48,4 @@ const Map1 = () => {
   );
 };
 
-export default Map1;
+export default MapAutoComplete;

@@ -4,7 +4,7 @@ import { Row, Col, Text, Button } from "../../common/RowColStyle";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faDirections,
-  faPhoneSquareAlt,
+  faPhoneAlt,
   faCheckCircle,
 } from "@fortawesome/free-solid-svg-icons";
 
@@ -23,13 +23,13 @@ const Card = () => {
             <br/>
             <br/>
             <Row>
-              <Col border={true} width={"10%"}>
+              <Col border={true} width={"20%"}>
                 <Text sub1={true}>
-                <FontAwesomeIcon icon={faPhoneSquareAlt} /> &nbsp; Call
+                <FontAwesomeIcon icon={faPhoneAlt} /> &nbsp; Call
                 </Text>
               </Col>
               &nbsp;&nbsp;&nbsp;
-              <Col border={true} width={"30%"}>
+              <Col border={true} width={"20%"}>
                 <Text sub1={true}>
                 <FontAwesomeIcon icon={faDirections} /> &nbsp; Go
                 </Text>

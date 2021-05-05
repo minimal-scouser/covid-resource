@@ -82,12 +82,19 @@ const GeoModal = (props) => {
   function closeModal() {
     setIsOpen(false);
   }
+
+  const getCoordinates = (lat, lng) => {
+    setState((prevState) => ({
+      ...prevState,
+      latitude: lat,
+      longitude: lng,
+      fetchedUserLocation: true,
+    }));
+  };
   return (
     <>
       <Modal
         isOpen={modalIsOpen}
-        onAfterOpen={afterOpenModal}
-        onRequestClose={closeModal}
         style={customStyles}
         contentLabel="Example Modal"
       >
@@ -122,7 +129,7 @@ const GeoModal = (props) => {
           </Row>
         </>
 
-        <MapAutoComplete />
+        <MapAutoComplete getCoordinates={getCoordinates} />
         <br />
         <Row>
           <Button
