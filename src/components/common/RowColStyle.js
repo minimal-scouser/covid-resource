@@ -16,7 +16,7 @@ const Col = styled.div`
   justify-content: center;
   margin-right: ${(props) => props.marginRight || null};
   border: ${(props) => (props.border ? "1px solid #ddd" : null)};
-  border-radius: ${(props) => (props.border ? "4px" : null)};
+  border-radius: ${(props) => (props.border ? "10px" : null)};
   padding-left: ${(props) => (props.border ? "5%" : null)};
   /* padding-right: ${(props) => (props.border ? "5%" : null)}; */
   /* margin-top: ${(props) => (props.border ? "7%" : null)}; */
