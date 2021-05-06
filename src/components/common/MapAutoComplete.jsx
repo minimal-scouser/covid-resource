@@ -4,6 +4,8 @@ import GooglePlacesAutocomplete, {
   geocodeByAddress,
   getLatLng,
 } from "react-google-places-autocomplete";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearchLocation } from "@fortawesome/free-solid-svg-icons";
 
 const API_KEY = process.env.REACT_APP_GMAPS_KEY;
 
@@ -28,20 +30,47 @@ const MapAutoComplete = (props) => {
     }
   }, [value]);
 
-  useEffect(() =>{
-    if(state.lat.length>0 || state.lng.length>0){
-      props.getCoordinates(state.lat, state.lng)
+  useEffect(() => {
+    if (state.lat.length > 0 || state.lng.length > 0) {
+      props.getCoordinates(state.lat, state.lng);
     }
-  },[state])
+  }, [state]);
 
   return (
     <>
-      {console.log("state", state)}
+      <br />
       <GooglePlacesAutocomplete
+        style={{ backgroundColor: "red" }}
         apiKey={API_KEY}
         selectProps={{
           value,
           onChange: setValue,
+          placeholder: (
+            <>
+              <FontAwesomeIcon icon={faSearchLocation} /> &nbsp;Search a
+              location...
+            </>
+          ),
+          styles: {
+            input: (provided) => ({
+              ...provided,
+              color: "#bbbfc8",
+            }),
+            // option: (provided) => ({
+            //   ...provided,
+            //   color: "red",
+            // }),
+            singleValue: (provided) => ({
+              ...provided,
+              color: "#bbbfc8",
+            }),
+            control: (provided) => ({
+              ...provided,
+              background: "#2c3942",
+              
+              
+            }),
+          },
         }}
       />
     </>

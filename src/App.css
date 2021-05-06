@@ -1,6 +1,7 @@
 .App {
   text-align: center;
-  background-color: #efebeb;
+  background-color: #1c1f28;
+  color: #abaeb7;
   /* height:10008px; */
 }
 
@@ -44,3 +45,9 @@ a{
   cursor: pointer;
   color: #1d1d1f;
 }
+
+p{
+  color: #bbbfc8;
+}
+
+

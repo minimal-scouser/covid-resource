@@ -15,7 +15,7 @@ const Col = styled.div`
   width: ${(props) => props.width || "40%"};
   justify-content: center;
   margin-right: ${(props) => props.marginRight || null};
-  border: ${(props) => (props.border ? "1px solid #ddd" : null)};
+  /* border: ${(props) => (props.border ? "1px solid #ddd" : null)}; */
   border-radius: ${(props) => (props.border ? "10px" : null)};
   padding-left: ${(props) => (props.border ? "5%" : null)};
   /* padding-right: ${(props) => (props.border ? "5%" : null)}; */
@@ -48,9 +48,9 @@ const Button = styled.button`
   
     padding: "10px 20px";
     background-color:${(props) => props.color || "dodgerblue"};
-    border: 1px solid #ddd;
+    /* border: 1px solid #ddd; */
     border-radius:20px ;
-    color: white;
+    color: #e9edf0;
     height: 10px;
 
     &:hover {

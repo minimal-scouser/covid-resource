@@ -17,7 +17,7 @@ const Card = () => {
             <Row>
               <Text bold={true}>Oxygen Dhaba</Text>
             </Row>
-            <Button disabled color={"green"}>
+            <Button disabled color={"#659a62"}>
               <FontAwesomeIcon icon={faCheckCircle} /> &nbsp;Available
             </Button>
             <br />
@@ -26,14 +26,19 @@ const Card = () => {
               <Col border={true} width={"20%"}>
                 <Text sub1={true}>
                   <FontAwesomeIcon icon={faPhoneAlt} /> &nbsp;{" "}
-                  <a href="tel:+62896706255135">Call</a>
+                  <a href="tel:+62896706255135" style={{ color: "#779ff0" }}>
+                    Call
+                  </a>
                 </Text>
               </Col>
               &nbsp;&nbsp;&nbsp;
               <Col border={true} width={"20%"}>
                 <Text sub1={true}>
                   <FontAwesomeIcon icon={faDirections} /> &nbsp;
-                  <a href="http://www.google.com/maps/place/49.46800006494457,17.11514008755796/@49.46800006494457,17.11514008755796,17z">
+                  <a
+                    style={{ color: "#779ff0" }}
+                    href="http://www.google.com/maps/place/49.46800006494457,17.11514008755796/@49.46800006494457,17.11514008755796,17z"
+                  >
                     Go
                   </a>
                 </Text>

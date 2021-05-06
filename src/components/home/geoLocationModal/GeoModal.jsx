@@ -20,7 +20,12 @@ const customStyles = {
     marginRight: "-28%",
     marginLeft: "2%",
     transform: "translate(-50%, -50%)",
+    background: "#2d313a",
+    border: "0px"
   },
+  overlay: {
+    backgroundColor:"#1c1f28",
+  }
 };
 
 const GeoModal = (props) => {
@@ -135,6 +140,7 @@ const GeoModal = (props) => {
           <Button
             disabled={!state.fetchedUserLocation}
             onClick={() => enableRedirect()}
+            color={"#6f95ed"}
           >
             Continue
           </Button>

@@ -68,6 +68,15 @@ const AvailabilityForm = () => {
     control: (styles) => ({
       ...styles,
       width: "100%",
+      background: "#2c3942",
+    }),
+    input: (provided) => ({
+      ...provided,
+      color: "red",
+    }),
+    singleValue: (provided) => ({
+      ...provided,
+      color: "#bbbfc8",
     }),
   };
 
@@ -194,6 +203,7 @@ const AvailabilityForm = () => {
           country="IND"
           onChange={(val) => onPhoneChange(val)}
           styles={dropdownStyles}
+          // style={{background:"red"}}
         />
         <br />
         <input
