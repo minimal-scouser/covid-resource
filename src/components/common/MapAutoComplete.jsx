@@ -67,8 +67,12 @@ const MapAutoComplete = (props) => {
             control: (provided) => ({
               ...provided,
               background: "#2c3942",
-              
-              
+              border: "0 !important",
+              // This line disable the blue border
+              boxShadow: "0 !important",
+              "&:hover": {
+                border: "0 !important",
+              },
             }),
           },
         }}
