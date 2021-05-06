@@ -1,7 +1,8 @@
-import React, { Component } from "react";
-import Cards from "./cardView/Cards";
-import MapAutoComplete from "../common/MapAutoComplete";
-import BadgeButtons from "../common/BadgeButtons"
+import React, { Component, lazy, Suspense } from "react";
+
+const Cards = lazy(() => import("./cardView/Cards"));
+const MapAutoComplete = lazy(() => import("../common/MapAutoComplete"));
+const BadgeButtons = lazy(() => import("../common/BadgeButtons"));
 
 export default class Home extends Component {
   render() {
@@ -9,15 +10,23 @@ export default class Home extends Component {
       <div style={{ marginLeft: "8%" }}>
         <div class="row">
           <div class="column">
-            <MapAutoComplete />
+            <Suspense fallback={<></>}>
+              <MapAutoComplete />
+            </Suspense>
           </div>
         </div>
         <div class="row">
-          <div class="column"><BadgeButtons /></div>
+          <div class="column">
+            <Suspense fallback={<></>}>
+              <BadgeButtons />
+            </Suspense>
+          </div>
         </div>
         <div class="row">
           <div class="column">
-            <Cards />
+            <Suspense fallback={<></>}>
+              <Cards />
+            </Suspense>
           </div>
         </div>
       </div>

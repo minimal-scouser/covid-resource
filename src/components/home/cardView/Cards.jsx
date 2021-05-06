@@ -1,35 +1,53 @@
-import React from "react";
-import Card from "./Card";
+import React, { lazy, Suspense } from "react";
+// import Card from "./Card";
 import { Row, Col } from "../../common/RowColStyle";
-const Cards = () => {
+const Card = lazy(() => import("./Card"));
+
+function Cards() {
   return (
     <Row>
       <Col width="50%">
-        <Card />
+        <Suspense fallback={<></>}>
+          <Card />
+        </Suspense>
       </Col>
-      <Col  width="50%">
-        <Card />
+      <Col width="50%">
+        <Suspense fallback={<></>}>
+          <Card />
+        </Suspense>
       </Col>
-      <Col  width="50%">
-        <Card />
+      <Col width="50%">
+        <Suspense fallback={<></>}>
+          <Card />
+        </Suspense>
       </Col>
-      <Col  width="50%">
-        <Card />
+      <Col width="50%">
+      <Suspense fallback={<></>}>
+          <Card />
+        </Suspense>
       </Col>
-      <Col  width="50%">
-        <Card />
+      <Col width="50%">
+      <Suspense fallback={<></>}>
+          <Card />
+        </Suspense>
       </Col>
-      <Col  width="50%">
-        <Card />
+      <Col width="50%">
+      <Suspense fallback={<></>}>
+          <Card />
+        </Suspense>
       </Col>
-      <Col  width="50%">
-        <Card />
+      <Col width="50%">
+      <Suspense fallback={<></>}>
+          <Card />
+        </Suspense>
       </Col>
-      <Col  width="50%">
-        <Card />
+      <Col width="50%">
+      <Suspense fallback={<></>}>
+          <Card />
+        </Suspense>
       </Col>
     </Row>
   );
-};
+}
 
 export default Cards;
