@@ -7,7 +7,7 @@ const BadgeButtons = lazy(() => import("../common/BadgeButtons"));
 export default class Home extends Component {
   render() {
     return (
-      <div style={{ marginLeft: "8%" }}>
+      <div>
         <div class="row">
           <div class="column">
             <Suspense fallback={<></>}>
@@ -22,7 +22,7 @@ export default class Home extends Component {
             </Suspense>
           </div>
         </div>
-        <div class="row">
+        <div class="row mb-0">
           <div class="column">
             <Suspense fallback={<></>}>
               <Cards />

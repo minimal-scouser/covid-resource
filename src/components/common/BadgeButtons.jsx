@@ -13,7 +13,7 @@ import {
 const BadgeButtons = () => {
   return (
     <>
-      <Row>
+      <Row style={{ margin: '20px 0' }}>
         <Text sub1={true}>Filters</Text>
       </Row>
       <Row  mTop="-20px">

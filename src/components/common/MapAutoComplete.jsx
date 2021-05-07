@@ -55,6 +55,7 @@ const MapAutoComplete = (props) => {
             input: (provided) => ({
               ...provided,
               color: "#bbbfc8",
+              paddingLeft: '20px',
             }),
             // option: (provided) => ({
             //   ...provided,

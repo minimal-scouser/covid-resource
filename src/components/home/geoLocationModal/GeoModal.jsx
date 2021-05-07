@@ -20,7 +20,8 @@ const customStyles = {
     marginRight: "-28%",
     transform: "translate(-50%, -50%)",
     background: "#2d313a",
-    border: "0px"
+    border: "0px",
+    width: '80%'
   },
   overlay: {
     backgroundColor:"#1c1f28",
