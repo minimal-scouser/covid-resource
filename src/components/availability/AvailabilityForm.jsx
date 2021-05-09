@@ -104,35 +104,26 @@ const AvailabilityForm = () => {
   };
 
   const onTypeChange = (arr) => {
-    console.log("type", arr);
     let typeStateCopy = typeState;
     let subOptionsArr = [];
     arr.forEach((elem) => {
       if (!typeStateCopy[elem.value]) {
-        console.log("kichu nei");
         typeStateCopy[elem.value] = [];
       }
       subOptionsArr.push(...subType[elem.value]);
     });
-    console.log("output", typeStateCopy);
     setTypeState(typeStateCopy);
     setSubOptions(subOptionsArr);
   };
 
   const onSubTypeChange = (arr) => {
-    console.log("subtype", arr);
     let typeStateCopy = typeState;
-    console.log("change", typeStateCopy);
     for (let key in typeStateCopy) {
       typeStateCopy[key] = [];
     }
     arr.forEach((elem) => {
-      // if(!typeStateCopy[elem.typeId].includes(elem.value)){
-      // typeStateCopy[elem.typeId] = [];
       typeStateCopy[elem.typeId].push(elem.value);
-      // }
     });
-    console.log("copy2", typeStateCopy);
     setTypeState(typeStateCopy);
   };
 
@@ -164,35 +155,15 @@ const AvailabilityForm = () => {
     let dataObj = state;
     dataObj.resources = typeState;
     console.log("i am submitting", dataObj);
-    // const stateObj = {
-    //   lat: "",
-    //   lng: "",
-    //   phone: "",
-    //   resource_type_id: "",
-    //   resource_subType_id: "",
-    //   name: "",
-    // };
-
-    // const valueObj = {
-    //   type: { value: "", label: "Select Type of Resource" },
-    //   subType: { value: "", label: "Select sub-type" },
-    // };
-
-    // setState(stateObj);
-    // setValue(valueObj);
+    //TODO : Clear form on submit
     setDisabled(true);
 
     notify();
   };
 
-  useEffect(() => {
-    console.log("i am in a changed state of mind", typeState);
-  });
-
   return (
     <>
       <ToastContainer />
-      {console.log("type state", typeState)}
       <div className="form">
         <Row>
           <Text>Add your Resource</Text>
