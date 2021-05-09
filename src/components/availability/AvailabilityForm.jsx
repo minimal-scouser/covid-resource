@@ -183,18 +183,18 @@ const AvailabilityForm = () => {
 
   const validateResource = () => {};
 
-  useEffect(() => {
-    if (
-      state.lat.length > 0 &&
-      state.lng.length > 0 &&
-      state.phone.length > 0 &&
-      state.resource_type_id.length > 0 &&
-      state.resource_subType_id.length > 0 &&
-      state.name.length > 0
-    ) {
-      setDisabled(false);
-    }
-  }, [state]);
+  // useEffect(() => {
+  //   if (
+  //     state.lat.length > 0 &&
+  //     state.lng.length > 0 &&
+  //     state.phone.length > 0 &&
+  //     state.resource_type_id.length > 0 &&
+  //     state.resource_subType_id.length > 0 &&
+  //     state.name.length > 0
+  //   ) {
+  //     setDisabled(false);
+  //   }
+  // }, [state]);
 
   const notify = () => toast.success("Resource added successfully!");
 
