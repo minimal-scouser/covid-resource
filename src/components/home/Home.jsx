@@ -24,10 +24,10 @@ export default class Home extends Component {
             </Suspense>
           </div>
         </div>
-        <div class="row">
+        <div class="row" style={{float: 'right'}}>
           <div
             class="column"
-            style={{ marginLeft: "38%", marginBottom: "-1%" }}
+            style={{ marginBottom: "-1%" }}
           >
             <Suspense fallback={<></>}>
               <Button color="#2c3942">
