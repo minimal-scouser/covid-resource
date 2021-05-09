@@ -20,30 +20,30 @@ const AvailabilityForm = () => {
 
   const subType = {
     1: [
-      { value: "1.1", label: "Refill" },
-      { value: "1.2", label: "New Cylinder" },
+      { value: "1.1", label: "Refill", typeId: "1" },
+      { value: "1.2", label: "New Cylinder", typeId: "1" },
     ],
     2: [
-      { value: "2.1", label: "Remedisvir" },
-      { value: "2.2", label: "Gelusil" },
-      { value: "2.3", label: "ENO" },
+      { value: "2.1", label: "Remedisvir", typeId: "2" },
+      { value: "2.2", label: "Gelusil", typeId: "2" },
+      { value: "2.3", label: "ENO", typeId: "2" },
     ],
     3: [
-      { value: "3.1", label: "ICU" },
-      { value: "3.2", label: "ICCU" },
-      { value: "3.3", label: "Oxygen Bed" },
-      { value: "3.4", label: "Normal Bed" },
+      { value: "3.1", label: "ICU", typeId: "3" },
+      { value: "3.2", label: "ICCU", typeId: "3" },
+      { value: "3.3", label: "Oxygen Bed", typeId: "3" },
+      { value: "3.4", label: "Normal Bed", typeId: "3" },
     ],
     4: [
-      { value: "4.1", label: "General" },
-      { value: "4.2", label: "Haturi" },
-      { value: "4.3", label: "Daami" },
+      { value: "4.1", label: "General", typeId: "4" },
+      { value: "4.2", label: "Haturi", typeId: "4" },
+      { value: "4.3", label: "Daami", typeId: "4" },
     ],
     5: [
-      { value: "5.1", label: "Veg" },
-      { value: "5.2", label: "Non-Veg" },
-      { value: "5.3", label: "Vegan" },
-      { value: "5.3", label: "Veg/Non-Veg" },
+      { value: "5.1", label: "Veg", typeId: "5" },
+      { value: "5.2", label: "Non-Veg", typeId: "5" },
+      { value: "5.3", label: "Vegan", typeId: "5" },
+      { value: "5.3", label: "Veg/Non-Veg", typeId: "5" },
     ],
   };
 
@@ -51,7 +51,7 @@ const AvailabilityForm = () => {
   const [disabled, setDisabled] = useState(true);
 
   const [value, setValue] = useState({
-    type: { value: "", label: "Select Type of Resource" },
+    type: { value: null, label: null },
     subType: { value: "", label: "Select sub-type" },
   });
 
@@ -59,10 +59,11 @@ const AvailabilityForm = () => {
     lat: "",
     lng: "",
     phone: "",
-    resource_type_id: "",
-    resource_subType_id: "",
+    resources: {},
     name: "",
   });
+
+  const [typeState, setTypeState] = useState({});
 
   const dropdownStyles = {
     control: (styles) => ({
@@ -102,30 +103,37 @@ const AvailabilityForm = () => {
     }));
   };
 
-  const onTypeChange = (value) => {
-    setState((prevState) => ({
-      ...prevState,
-      resource_type_id: value.value,
-      resource_subType_id: "",
-    }));
-    console.log("subtype", subType[value.value]);
-    setSubOptions(subType[value.value]);
-    setValue((prevState) => ({
-      ...prevState,
-      type: value,
-      subType: { value: "", label: "Select sub-type" },
-    }));
+  const onTypeChange = (arr) => {
+    console.log("type", arr);
+    let typeStateCopy = typeState;
+    let subOptionsArr = [];
+    arr.forEach((elem) => {
+      if (!typeStateCopy[elem.value]) {
+        console.log("kichu nei");
+        typeStateCopy[elem.value] = [];
+      }
+      subOptionsArr.push(...subType[elem.value]);
+    });
+    console.log("output", typeStateCopy);
+    setTypeState(typeStateCopy);
+    setSubOptions(subOptionsArr);
   };
 
-  const onSubTypeChange = (value) => {
-    setState((prevState) => ({
-      ...prevState,
-      resource_subType_id: value.value,
-    }));
-    setValue((prevState) => ({
-      ...prevState,
-      subType: value,
-    }));
+  const onSubTypeChange = (arr) => {
+    console.log("subtype", arr);
+    let typeStateCopy = typeState;
+    console.log("change", typeStateCopy);
+    for (let key in typeStateCopy) {
+      typeStateCopy[key] = [];
+    }
+    arr.forEach((elem) => {
+      // if(!typeStateCopy[elem.typeId].includes(elem.value)){
+      // typeStateCopy[elem.typeId] = [];
+      typeStateCopy[elem.typeId].push(elem.value);
+      // }
+    });
+    console.log("copy2", typeStateCopy);
+    setTypeState(typeStateCopy);
   };
 
   const onNameChange = (e) => {
@@ -134,6 +142,8 @@ const AvailabilityForm = () => {
       name: e.target.value,
     }));
   };
+
+  const validateResource = () => {};
 
   useEffect(() => {
     if (
@@ -151,31 +161,38 @@ const AvailabilityForm = () => {
   const notify = () => toast.success("Resource added successfully!");
 
   const onSubmit = () => {
-    const stateObj = {
-      lat: "",
-      lng: "",
-      phone: "",
-      resource_type_id: "",
-      resource_subType_id: "",
-      name: "",
-    };
+    let dataObj = state;
+    dataObj.resources = typeState;
+    console.log("i am submitting", dataObj);
+    // const stateObj = {
+    //   lat: "",
+    //   lng: "",
+    //   phone: "",
+    //   resource_type_id: "",
+    //   resource_subType_id: "",
+    //   name: "",
+    // };
 
-    const valueObj = {
-      type: { value: "", label: "Select Type of Resource" },
-      subType: { value: "", label: "Select sub-type" },
-    };
+    // const valueObj = {
+    //   type: { value: "", label: "Select Type of Resource" },
+    //   subType: { value: "", label: "Select sub-type" },
+    // };
 
-    setState(stateObj);
-    setValue(valueObj);
-    setDisabled(true)
+    // setState(stateObj);
+    // setValue(valueObj);
+    setDisabled(true);
 
     notify();
   };
 
+  useEffect(() => {
+    console.log("i am in a changed state of mind", typeState);
+  });
+
   return (
     <>
       <ToastContainer />
-      {console.log("state form", state)}
+      {console.log("type state", typeState)}
       <div className="form">
         <Row>
           <Text>Add your Resource</Text>
@@ -189,9 +206,10 @@ const AvailabilityForm = () => {
           options={options}
           placeholder="Select type"
           styles={dropdownStyles}
-          onChange={(val) => onTypeChange(val)}
-          value={value.type}
+          onChange={(e) => onTypeChange(e)}
+          defaultValue={null}
           isSearchable={false}
+          isMulti={true}
           // isClearable={true}
         />
         <br />
@@ -199,9 +217,10 @@ const AvailabilityForm = () => {
           options={subOptions}
           placeholder="Select sub-type"
           styles={dropdownStyles}
-          onChange={(val) => onSubTypeChange(val)}
-          value={value.subType}
+          onChange={(e) => onSubTypeChange(e)}
+          defaultValue={null}
           isSearchable={false}
+          isMulti={true}
         />
         <br />
         <PhoneInput
@@ -221,7 +240,11 @@ const AvailabilityForm = () => {
           onChange={(e) => onNameChange(e)}
         />
         <br />
-        <button type="submit" disabled={disabled} onClick={() => onSubmit()}>
+        <button
+          type="submit"
+          // disabled={disabled}
+          onClick={() => onSubmit()}
+        >
           Submit
         </button>
       </div>
