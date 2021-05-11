@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from "react";
-import "./App.css";
-import Route from "./routes/index";
-import GeoModal from "./components/home/geoLocationModal/GeoModal";
+import React, { useState, useEffect } from 'react';
+import './App.css';
+import Route from './routes/index';
+import GeoModal from './components/home/geoLocationModal/GeoModal';
+import firebase from 'firebase/app';
+import { firebaseConfig } from './firebase.config';
 
 function App() {
   const [state, setState] = useState({
@@ -15,6 +17,12 @@ function App() {
     }));
   };
 
+  if (!firebase.apps.length) {
+    firebase.initializeApp(firebaseConfig);
+  } else {
+    firebase.app();
+  }
+
   return (
     <>
       {state.fetchedUserLocation ? (
@@ -22,8 +30,7 @@ function App() {
       ) : (
         <GeoModal enableRedirect={enableRedirect} />
       )}
-
-      {/*  */}
+      <Route />
     </>
   );
 }
