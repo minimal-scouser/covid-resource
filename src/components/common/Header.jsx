@@ -18,16 +18,19 @@ const Header = () => {
   };
 
   useEffect(() => {
-    onNavClick()
+    // onNavClick()
   },[])
   return (
     <>
       <div className="topnav" id="myTopnav">
-        <NavLink to="/" activeClassName={"selected"}>
+        <NavLink to="/">
         <FontAwesomeIcon icon={faShieldVirus} /> &nbsp; Home
         </NavLink>
-        <NavLink to="/add-availability" activeClassName={"selected"}>
+        <NavLink onClick={onNavClick} to="/add-availability">
         <FontAwesomeIcon icon={faPlusCircle} /> &nbsp;Add Resource
+        </NavLink>
+        <NavLink onClick={onNavClick} to="/verify-volunteer">
+        <FontAwesomeIcon icon={faPlusCircle} /> &nbsp;Verification Volunteer
         </NavLink>
         {/* <a href="#contact">Contact</a>
         <a href="#about">About</a> */}
