@@ -8,6 +8,7 @@
 
 ## Home Screen
 ![WhatsApp Image 2021-05-10 at 11 29 54](https://user-images.githubusercontent.com/28345327/118147727-80101e00-b42d-11eb-9930-02a1ddb22463.jpeg)
+
 ![WhatsApp Image 2021-05-10 at 11 29 54](https://user-images.githubusercontent.com/28345327/118147759-8acab300-b42d-11eb-9389-67bb8c89ff4e.jpeg)
 
 ## Adding Data
@@ -15,6 +16,7 @@
 
 ## Moderator Login and Moderator Screen
 ![WhatsApp Image 2021-05-13 at 20 51 33 (4)](https://user-images.githubusercontent.com/28345327/118148149-edbc4a00-b42d-11eb-834e-b30fe4b89ec4.jpeg)
+
 <img width="424" alt="Screenshot 2021-05-13 at 8 50 54 PM" src="https://user-images.githubusercontent.com/28345327/118148196-fb71cf80-b42d-11eb-97e1-c887a59cb4d9.png">
 
 
