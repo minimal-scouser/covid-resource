@@ -14,7 +14,7 @@ const Layout = () => {
         <Route path="/verify-volunteer" render={(props) => <VerifyVolunteer {...props} />} />
       </Switch>
       <Switch>
-        <Route exact path="/" render={(props) => <Home {...props} />} />
+        <Route exact path="/" render={(props) => <Home {...props} mod={false}/>} />
       </Switch>
     </>
   );

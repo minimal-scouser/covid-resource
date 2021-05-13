@@ -1,7 +1,9 @@
-import React, { Component, useState } from 'react';
-import firebase from 'firebase/app';
-import 'firebase/auth';
-import { Button } from '../common/RowColStyle';
+import React, { Component, useState } from "react";
+import firebase from "firebase/app";
+import "firebase/auth";
+import { Button, Row, Col, Text } from "../common/RowColStyle";
+import "./style.css";
+import ModHome from  "./ModHome"
 
 export function VerifyVolunteer() {
   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -46,12 +48,33 @@ export function VerifyVolunteer() {
     <div className="App">
       {hasSignedIn === false ? (
         <React.Fragment>
-          <p>Please sign in with google to proceed.</p>
-          <Button onClick={signInUsingGoogle}>Sign In</Button>
+          <Row>
+            <Col width="50%">
+              <Text>Sing in with Google to continue</Text>
+            </Col>
+          </Row>
+          <Row>
+            <Col width="50%">
+              <div class="g_body">
+                <button class="g-button" onClick={signInUsingGoogle}>
+                  <img
+                    class="g-logo"
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/157px-Google_%22G%22_Logo.svg.png"
+                    alt="Google Logo"
+                  />
+                  <p class="g-text">Sign in with Google</p>
+                </button>
+              </div>
+            </Col>
+          </Row>
+
+          {/* <p>Please sign in with google to proceed.</p>
+          <Button onClick={signInUsingGoogle}>Sign In</Button> */}
         </React.Fragment>
       ) : (
         <React.Fragment>
           <p>Welcome {userDetails.userName}</p>
+          <ModHome />
         </React.Fragment>
       )}
     </div>

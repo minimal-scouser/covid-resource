@@ -7,6 +7,10 @@ import {
   faPhoneAlt,
   faCheckCircle,
   faShareAlt,
+  faUserCheck,
+  faCheckSquare,
+  faPhoneSlash,
+  faFlag,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   BrowserView,
@@ -14,8 +18,10 @@ import {
   isBrowser,
   isMobile,
 } from "react-device-detect";
+import Popup from "reactjs-popup";
+import "reactjs-popup/dist/index.css";
 
-const Card = () => {
+const Card = (props) => {
   return (
     <>
       <div class="row">
@@ -93,7 +99,6 @@ const Card = () => {
               >
                 <FontAwesomeIcon icon={faCheckCircle} /> &nbsp;Ambulance
               </Button>
-              
             </Row>
             <Row>
               <Col>
@@ -101,23 +106,25 @@ const Card = () => {
                   Sonu Sood
                 </Text>
               </Col>
-              <Col width="30%">
-                <div style={{ marginLeft: "100%" }}>
-                  {" "}
-                  <Text
-                    sub1={true}
-                    style={{ alignItems: "center", justifyContent: "center" }}
-                  >
-                    <a
-                      target="_blank"
-                      style={{ color: "#779ff0", fontSize: "30px" }}
-                      href="http://www.google.com/maps/place/49.46800006494457,17.11514008755796/@49.46800006494457,17.11514008755796,17z"
+              {props.mod ? null : (
+                <Col width="30%">
+                  <div style={{ marginLeft: "100%" }}>
+                    {" "}
+                    <Text
+                      sub1={true}
+                      style={{ alignItems: "center", justifyContent: "center" }}
                     >
-                      <FontAwesomeIcon icon={faDirections} />
-                    </a>
-                  </Text>
-                </div>
-              </Col>
+                      <a
+                        target="_blank"
+                        style={{ color: "#779ff0", fontSize: "30px" }}
+                        href="http://www.google.com/maps/place/49.46800006494457,17.11514008755796/@49.46800006494457,17.11514008755796,17z"
+                      >
+                        <FontAwesomeIcon icon={faDirections} />
+                      </a>
+                    </Text>
+                  </div>
+                </Col>
+              )}
             </Row>
             <Row>
               <Col width="50%">
@@ -146,20 +153,45 @@ const Card = () => {
                   sub1={true}
                   style={{ alignItems: "center", justifyContent: "center" }}
                 >
-                  <FontAwesomeIcon icon={faShareAlt} /> &nbsp;{" "}
-                  <a
-                    href={
-                      isMobile
-                        ? "whatsapp://send?text= Please Visit http://ad-test.easygov.co.in/PanAdvertisement"
-                        : "https://web.whatsapp.com://send?text= Please Visit http://ad-test.easygov.co.in/PanAdvertisement"
-                    }
-                    rel="nofollow noopener"
-                    target="_blank"
-                    className="share-icon"
-                    style={{ color: "#779ff0" }}
-                  >
-                    Share
-                  </a>
+                  <FontAwesomeIcon
+                    icon={props.mod ? faUserCheck : faShareAlt}
+                  />{" "}
+                  &nbsp;{" "}
+                  {props.mod ? (
+                    <Popup
+                      trigger={<a style={{ color: "#779ff0" }}> Verify</a>}
+                      position="bottom center"
+                    >
+                      <div style={{ color: "#779ff0" }}>
+                        {" "}
+                        <FontAwesomeIcon icon={faCheckSquare} /> &nbsp;Verified
+                      </div>
+                      <hr></hr>
+                      <div style={{ color: "#779ff0" }}>
+                        {" "}
+                        <FontAwesomeIcon icon={faPhoneSlash} />{" "}
+                        &nbsp;Unreachable
+                      </div>
+                      <hr></hr>
+                      <div style={{ color: "#779ff0" }}>
+                        <FontAwesomeIcon icon={faFlag} /> &nbsp;Fake
+                      </div>
+                    </Popup>
+                  ) : (
+                    <a
+                      href={
+                        isMobile
+                          ? "whatsapp://send?text= Please Visit http://ad-test.easygov.co.in/PanAdvertisement"
+                          : "https://web.whatsapp.com://send?text= Please Visit http://ad-test.easygov.co.in/PanAdvertisement"
+                      }
+                      rel="nofollow noopener"
+                      target="_blank"
+                      className="share-icon"
+                      style={{ color: "#779ff0" }}
+                    >
+                      Share
+                    </a>
+                  )}
                 </Text>
               </Col>
             </Row>

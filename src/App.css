@@ -54,4 +54,14 @@ button{
   border: 0 !important;
 }
 
+.timer{
+  margin-left:47%;
+}
+
+@media screen and (max-width: 600px) {
+  .timer{
+    margin-left:35%;
+  }
+  
+}
 
