@@ -12,7 +12,8 @@
 ![WhatsApp Image 2021-05-10 at 11 29 54](https://user-images.githubusercontent.com/28345327/118147759-8acab300-b42d-11eb-9389-67bb8c89ff4e.jpeg)
 
 ## Adding Data
-![WhatsApp Image 2021-05-10 at 11 29 54](https://user-images.githubusercontent.com/28345327/118148026-cb2a3100-b42d-11eb-8009-80cc2ef90a9d.jpeg)
+![WhatsApp Image 2021-05-13 at 20 51 33 (3)](https://user-images.githubusercontent.com/28345327/118149083-d7fb5480-b42e-11eb-8b62-f3b7774b6573.jpeg)
+
 
 ## Moderator Login and Moderator Screen
 ![WhatsApp Image 2021-05-13 at 20 51 33 (4)](https://user-images.githubusercontent.com/28345327/118148149-edbc4a00-b42d-11eb-834e-b30fe4b89ec4.jpeg)
