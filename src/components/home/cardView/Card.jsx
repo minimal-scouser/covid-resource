@@ -162,20 +162,20 @@ const Card = (props) => {
                       trigger={<a style={{ color: "#779ff0" }}> Verify</a>}
                       position="bottom center"
                     >
-                      <div style={{ color: "#779ff0" }}>
+                      <a style={{ color: "#779ff0" }}>
                         {" "}
                         <FontAwesomeIcon icon={faCheckSquare} /> &nbsp;Verified
-                      </div>
+                      </a>
                       <hr></hr>
-                      <div style={{ color: "#779ff0" }}>
+                      <a style={{ color: "#779ff0" }}>
                         {" "}
                         <FontAwesomeIcon icon={faPhoneSlash} />{" "}
                         &nbsp;Unreachable
-                      </div>
+                      </a>
                       <hr></hr>
-                      <div style={{ color: "#779ff0" }}>
+                      <a style={{ color: "#779ff0" }}>
                         <FontAwesomeIcon icon={faFlag} /> &nbsp;Fake
-                      </div>
+                      </a>
                     </Popup>
                   ) : (
                     <a
