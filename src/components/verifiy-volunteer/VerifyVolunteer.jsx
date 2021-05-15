@@ -1,17 +1,21 @@
-import React, { Component, useState } from "react";
-import firebase from "firebase/app";
-import "firebase/auth";
-import { Button, Row, Col, Text } from "../common/RowColStyle";
-import "./style.css";
-import ModHome from  "./ModHome"
+import React, { Component, useState } from 'react';
+import firebase from 'firebase/app';
+import 'firebase/auth';
+import { Button, Row, Col, Text, Div } from '../common/RowColStyle';
+import './style.css';
+import ModHome from './ModHome';
 
 export function VerifyVolunteer() {
   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
   const provider = new firebase.auth.GoogleAuthProvider();
   const [hasSignedIn, setHasSignedIn] = useState(false);
+  const [hasResolved, setHasResolved] = useState({ state: 'initial' });
   const [userDetails, setUserDetails] = useState({});
 
   function signInUsingGoogle() {
+    setHasResolved((prev) => ({
+      state: 'started'
+    }));
     firebase
       .auth()
       .signInWithPopup(provider)
@@ -29,7 +33,9 @@ export function VerifyVolunteer() {
           userName: result.user.displayName,
         });
         setHasSignedIn(true);
-        console.log("Umm yah");
+        setHasResolved((prev) => ({
+          state: 'done'
+        }));
       })
       .catch((error) => {
         console.log(error);
@@ -48,13 +54,8 @@ export function VerifyVolunteer() {
     <div className="App">
       {hasSignedIn === false ? (
         <React.Fragment>
-          <Row>
-            <Col width="50%">
-              <Text>Sing in with Google to continue</Text>
-            </Col>
-          </Row>
-          <Row>
-            <Col width="50%">
+          {hasResolved.state === 'initial' && (
+            <Div>
               <div class="g_body">
                 <button class="g-button" onClick={signInUsingGoogle}>
                   <img
@@ -65,8 +66,14 @@ export function VerifyVolunteer() {
                   <p class="g-text">Sign in with Google</p>
                 </button>
               </div>
-            </Col>
-          </Row>
+            </Div>
+          )}
+
+          {hasResolved.state === 'started' && (
+            <Div flex="all-center">
+              <Text>Processing</Text>
+            </Div>
+          )}
 
           {/* <p>Please sign in with google to proceed.</p>
           <Button onClick={signInUsingGoogle}>Sign In</Button> */}

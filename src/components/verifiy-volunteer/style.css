@@ -1,53 +1,52 @@
 .g_body{
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    border-radius:8px;
-    background-color: #2d313a; */
-  }
-  
-  .g-button{
-    border: 1px solid rgb(66, 133, 244);
-    background: rgb(66, 133, 244);
-    display: flex;
-    border-radius: 4px !important;
-    padding: 10px  !important;
-  }
-  
-  .g-logo{
-    width: 21px;
-    height: 21px;
-    padding: 8px 10px;
-    background: white;
-    margin-top:12px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    /* border-radius: 20px !important; */
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius:8px;
+  background-color: #2d313a; */
+}
 
-  }
-  
-  .g-text{
-    font-size: 16px;
-    padding: 8px 10px;
-    color: white;
-    font-family: roboto;
-    text-align: center;
-  }
+.g-button{
+  border: 1px solid rgb(66, 133, 244);
+  background: rgb(66, 133, 244);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  padding: 0 10px;
+}
 
-  .timerDiv {
-    font-family: "Montserrat";
-    /* display: flex;
-    flex-direction: column; */
-    align-items: center;
-  }
+.g-logo{
+  height: 21px;
+  padding: 8px 10px;
+  margin-right: 10px;
+  background: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.g-text{
+  font-size: 16px;
+  color: white;
+  font-family: roboto;
+  text-align: center;
+}
+
+.timerDiv {
+  font-family: "Montserrat";
+  /* display: flex;
+  flex-direction: column; */
+  align-items: center;
+}
 
 
-  .text {
-    color: #aaa;
-    font-size: 12px;
-  }
-  
-  .value {
-    font-size: 20px;
-  }
+.text {
+  color: #aaa;
+  font-size: 12px;
+}
+
+.value {
+  font-size: 20px;
+}
