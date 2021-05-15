@@ -30,7 +30,6 @@ function App() {
       ) : (
         <GeoModal enableRedirect={enableRedirect} />
       )}
-      <Route />
     </>
   );
 }
