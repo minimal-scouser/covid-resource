@@ -9,13 +9,6 @@ const Routes = () => {
       <div className="App">
           <Header/>
         <Switch className="App-content">
-          <Route
-            path="/logout"
-            component={() => {
-              window.location.href = "/logout";
-              return null;
-            }}
-          />
           <Route path="/" render={(props) => <Layout {...props} />} />
         </Switch>
       </div>

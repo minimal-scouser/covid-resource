@@ -30,9 +30,9 @@ const customStyles = {
 
 const GeoModal = (props) => {
   const [state, setState] = useState({
-    latitude: "",
-    longitude: "",
-    placeName: "",
+    lat: "",
+    lng: "",
+    address: "",
     fetchedUserLocation: false,
   });
 
@@ -50,10 +50,9 @@ const GeoModal = (props) => {
     navigator.geolocation.getCurrentPosition(function (position) {
       setState((prevState) => ({
         ...prevState,
-        latitude: position.coords.latitude,
-        longitude: position.coords.longitude,
+        lat: position.coords.latitude,
+        lng: position.coords.longitude,
       }));
-
       Geocode.fromLatLng(
         position.coords.latitude.toString(),
         position.coords.longitude.toString()
@@ -63,7 +62,7 @@ const GeoModal = (props) => {
 
           setState((prevState) => ({
             ...prevState,
-            placeName: address,
+            address: address,
             fetchedUserLocation: true,
           }));
         },
@@ -79,14 +78,6 @@ const GeoModal = (props) => {
     setIsOpen(true);
   }
 
-  function afterOpenModal() {
-    // references are now sync'd and can be accessed.
-    // subtitle.style.color = "#f00";
-  }
-
-  function closeModal() {
-    setIsOpen(false);
-  }
 
   const getCoordinates = (lat, lng) => {
     setState((prevState) => ({
@@ -103,7 +94,7 @@ const GeoModal = (props) => {
         style={customStyles}
         contentLabel="Example Modal"
       >
-        {state.placeName.length > 0 ? (
+        {state.address.length > 0 ? (
           <>
             <Row>
               <Text sub1={true}>Your current location is</Text>
@@ -112,7 +103,7 @@ const GeoModal = (props) => {
             <Row mTop={"-37px"}>
               <Text>
                 <FontAwesomeIcon icon={faMapMarkerAlt} /> &nbsp;
-                {state.placeName}
+                {state.address}
               </Text>
             </Row>
           </>
